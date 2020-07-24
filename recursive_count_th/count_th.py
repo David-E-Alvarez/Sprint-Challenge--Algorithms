@@ -10,20 +10,25 @@ def count_th(word):
     th_len = len("th")
     if len(word) == 0:#base case
         return 0
-    #else: #recursive case
+    else: #recursive case
         #check to see if first two letters are t and h; "th"
         if word[0:th_len] == th_str:
             #if so return rest of string without the first letter to
             # check for first two letters again and see if they are "th"
-            return
+            return count_th(word[th_len - 1:]) + 1
+        else:
+            #return rest of string to repeat process of checking
+            # to see if first two letters are "th"
+            return count_th(word[th_len - 1:])
+        
     
 
         
         
 
     #return "word"
-    return word
+    #return word
 
-word = "aksjdfasdf"
-print(f"count_th(cat): ", count_th(word))
+# word = "thhtthht"
+# print(f"count_th(abcthxyz): ", count_th(word))
 #len(word)
