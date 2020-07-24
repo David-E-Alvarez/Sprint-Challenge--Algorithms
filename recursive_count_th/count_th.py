@@ -6,5 +6,7 @@ Your function must utilize recursion. It cannot contain any loops.
 def count_th(word):
     
     # TBC
-    
-    pass
+    #return "word"
+    return word
+
+print(f"count_th(cat): ", count_th("boop"))
